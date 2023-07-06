@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "PRO.Api.Features.Grpc.Protos";
+
+package elastic;
+
+// The greeting service definition.
+service GrpcElastic {
+  // Sends a greeting
+  rpc SyncIndex (SyncRequest) returns (stream SyncReply);
+}
+
+// The request message containing the user's name.
+message SyncRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message SyncReply {
+  string message = 1;
+}
